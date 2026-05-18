@@ -28,18 +28,30 @@ public class PanelEditarRestaurante extends JPanel
 
     public PanelEditarRestaurante( )
     {
+        setLayout( new GridLayout( 3, 1 ) );
+
         // Crea el campo para el nombre con una etiqueta al frente
-        // TODO completar
+        JPanel panelNombre = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+        panelNombre.add( new JLabel( "Nombre" ) );
+        txtNombre = new JTextField( 15 );
+        panelNombre.add( txtNombre );
+        add( panelNombre );
 
         // Crea el selector para la calificación con una etiqueta al frente
-        // TODO completar
+        JPanel panelCalificacion = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+        panelCalificacion.add( new JLabel( "Calificación" ) );
+        String[] calificaciones = { "1", "2", "3", "4", "5" };
+        cbbCalificacion = new JComboBox<>( calificaciones );
+        panelCalificacion.add( cbbCalificacion );
+        add( panelCalificacion );
 
         // Crea el selector para indicar si ya ha sido visitado, con una etiqueta al frente
-        // TODO completar
-
-        // Agregar todos los elementos al panel
-        // TODO completar
-
+        JPanel panelVisitado = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+        panelVisitado.add( new JLabel( "Visitado" ) );
+        String[] opciones = { "No", "Sí" };
+        cbbVisitado = new JComboBox<>( opciones );
+        panelVisitado.add( cbbVisitado );
+        add( panelVisitado );
     }
 
     /**
@@ -48,8 +60,8 @@ public class PanelEditarRestaurante extends JPanel
      */
     public boolean getVisitado( )
     {
-        // TODO completar
-        return false;
+        String opcion = ( String )cbbVisitado.getSelectedItem( );
+        return opcion.equals( "Sí" );
     }
 
     /**
@@ -68,7 +80,6 @@ public class PanelEditarRestaurante extends JPanel
      */
     public String getNombre( )
     {
-        // TODO completar
-        return "";
+        return txtNombre.getText( );
     }
 }
