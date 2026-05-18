@@ -32,21 +32,21 @@ public class PanelDetallesRestaurante extends JPanel
     {
         setLayout( new GridLayout( 3, 1 ) );
 
-        // Configura la etiqueta para el nombre
+        // etiqueta para el nombre
         JPanel panelNombre = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
         panelNombre.add( new JLabel( "Nombre:" ) );
         labNombre = new JLabel( "" );
         panelNombre.add( labNombre );
         add( panelNombre );
 
-        // Configura la etiqueta para la calificación
+        // etiqueta para la calificación
         JPanel panelCalificacion = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
         panelCalificacion.add( new JLabel( "Calificación:" ) );
         labCalificacion = new JLabel( );
         panelCalificacion.add( labCalificacion );
         add( panelCalificacion );
 
-        // Configura el checkbox para indicar si ya se visitaó o no el restaurante
+        // checkbox para indicar si ya se visito el restaurante
         JPanel panelVisitado = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
         panelVisitado.add( new JLabel( "Visitado:" ) );
         chkVisitado = new JCheckBox( );
